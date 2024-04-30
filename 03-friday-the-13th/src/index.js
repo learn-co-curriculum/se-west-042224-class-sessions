@@ -2,6 +2,7 @@
 // Global 
 //////////////
 const movieURL = "http://localhost:3000/movies"
+let selectedMovie;
 
 /////////////
 // DOM Selectors
@@ -13,6 +14,7 @@ const yearReleased = document.querySelector("#year-released")
 const description = document.querySelector("#description")
 const watched = document.querySelector("#watched")
 const amount = document.querySelector("#amount")
+const bloodForm = document.querySelector("#blood-form")
 // console.log("🚀 ~ movieList:", movieList)
 
 ////////////
@@ -26,20 +28,21 @@ function getAllMovies(url){
 // Render Functions
 /////////////
 function renderAllMovies(moviesArr){
-    console.log("🚀 ~ renderAllMovies ~ moviesArr:", moviesArr)
+    // console.log("🚀 ~ renderAllMovies ~ moviesArr:", moviesArr)
     moviesArr.forEach(renderInNav)
 }
 
 function renderInNav(movieObj){
-    console.log("🚀 ~ renderInNav ~ movieObj:", movieObj)
+    // console.log("🚀 ~ renderInNav ~ movieObj:", movieObj)
     const img = document.createElement("img")
-    console.log("🚀 ~ renderInNav ~ img:", img)
+    // console.log("🚀 ~ renderInNav ~ img:", img)
     img.src = movieObj.image
     img.addEventListener('click', () => renderDetail(movieObj))
     movieList.append(img)
 }
 
 function renderDetail(movieObj){
+    selectedMovie = movieObj
     detailImage.src = movieObj.image
     title.innerText = movieObj.title
     yearReleased.innerText = movieObj.release_year
@@ -53,7 +56,22 @@ function renderDetail(movieObj){
 // Event Listeners/Handlers
 ////////////
 
+function handleBloodSubmit(e){
+    e.preventDefault()
+    console.dir(e.target["blood-amount"].value)
+    // amount.innerText = e.target["blood-amount"].value
+    selectedMovie.blood_amount += Number(e.target["blood-amount"].value) // typecast from string to integer
+    renderDetail(selectedMovie)
+    e.target.reset()
+}
+bloodForm.addEventListener('submit', handleBloodSubmit)
 
+function toggleWatched(){
+    selectedMovie.watched = !selectedMovie.watched
+    renderDetail(selectedMovie)
+}
+
+watched.addEventListener('click', toggleWatched)
 
 ///////////////
 // Initializers

@@ -24,7 +24,15 @@ As a user, I can:
 - [x] Add event listener to each <img> in <nav>
 - [x] invoke renderDetail with the movie object that corresponds to the clicked <img>
 4. [Bonus] Click a 'watched' button which toggles the movie's watched status; no backend persistence is required
+- [] Add event listener to watched button
+- [] Toggle the watched status of the selectedMovie object
+- [] re-render the movie-info section
 5. Enter a number of drops for each movie in the form and have it persist in the DOM (no back-end persistence is required)
+- [x] select the form element
+- [x] attach listener to form element
+- [x] prevent default
+- [x] get the value of the input field
+- [x] assign the value to the movie object
 
 ## Data shape
 ```json
