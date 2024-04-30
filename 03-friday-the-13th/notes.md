@@ -14,9 +14,15 @@ As a user, I can:
 - [x] Iterate over the array of movies, passing data to a renderInNav function
 - [x] Create a new `img` element for each movie
 - [x] Assign urls as img.src to new <img>s
-- [] Append each new `img` to the `movie-list` nav element
+- [x] Append each new `img` to the `movie-list` nav element
 2. View the 1st movie details in movie-info section
+- [x] Select the child elements of  `movie-info` section
+- [x] Make renderDetail function that accepts a movie object as an argument
+- [x] Assign data from movie to the child elements
+- [x] call renderDetail with the first movie in the array
 3. Click on a movie in nav element to view its details in movie-info section
+- [x] Add event listener to each <img> in <nav>
+- [x] invoke renderDetail with the movie object that corresponds to the clicked <img>
 4. [Bonus] Click a 'watched' button which toggles the movie's watched status; no backend persistence is required
 5. Enter a number of drops for each movie in the form and have it persist in the DOM (no back-end persistence is required)
 
