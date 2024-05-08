@@ -1,15 +1,37 @@
 function hasTargetSum(array, target) {
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] + array[j] === target) {
-        return true
-      }
-    }
+  // Solution 1:
+  // for (let i = 0; i < array.length; i++) {
+  //   let complement = target - array[i];
+  //   for (let j = i + 1; j < array.length; j++) {
+  //     if (array[j] === complement) {
+  //       return true
+  //     }
+  //   }
+  // }
+  // return false
+  // Solution 2:
+  // let seenNumbers = {}
+  // for (let number of array) {
+  //   let complement = target - number;
+  //   if (seenNumbers[complement]){
+  //     return true
+  //   }
+  //   seenNumbers[number] = true
+  // }
+  // return false
+  // Solution 3 (w/set):
+  const seenNumbers = new Set();
+  for (const number of array) {
+    const complement = target - number;
+    if (seenNumbers.has(complement)) return true;
+    seenNumbers.add(number);
   }
-  return false
+  return false;
 }
 /* 
   Write the Big O time complexity of your function here
+  Solution 1: O(n^2) - quadratic 
+  Solution 2: O(n) - linear
 */
 
 /* 
