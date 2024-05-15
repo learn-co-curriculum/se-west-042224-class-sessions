@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import Boss from "../assets/boss-hog.png";
 import BabyHog from "./BabyHog";
-// import offspring from "../data.js"
+import offspring from "../data.js"
 
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
+  console.log("🚀 ~ offspring:", offspring)
 
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value);
   }
+
+  const piglets = offspring.map(pigletObj => (
+    <BabyHog
+      key={pigletObj.id}
+      name={pigletObj.name}
+      hobby={pigletObj.hobby}
+      eyeColor={eyeColor}  
+    />))
 
   return (
     <div>
@@ -40,9 +49,7 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        <BabyHog />
-        <BabyHog />
-        <BabyHog />
+        {piglets}
       </ul>
     </div>
   );
