@@ -1,6 +1,6 @@
 import React from "react";
 
-function MenuBar(props) {
+function MenuBar({ onSelect, selectedDetail }) {
   /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
@@ -11,23 +11,26 @@ function MenuBar(props) {
   this component be made aware of what is currently the active menu item?
 
   */
+ function handleSelect(e){
+    onSelect(e.target.id)
+ }
 
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span onClick={handleSelect} id="profile" className={selectedDetail == "profile" ? "item active" : "item"}>
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span onClick={handleSelect} id="photo" className={selectedDetail == "photo" ? "item active" : "item"}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span onClick={handleSelect} id="cocktail" className={selectedDetail == "cocktail" ? "item active" : "item"}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
-        <i className=" themeisle large icon" />
+      <span onClick={handleSelect} id="pokemon" className={selectedDetail == "pokemon" ? "item active" : "item"}>
+        <i className="themeisle large icon" />
       </span>
     </div>
   );
