@@ -1,12 +1,17 @@
-import React from "react";
-import Nav from "./Nav";
+import { useState } from "react";
+import Header from "./Header";
+import Hoglist from "./Hoglist";
+import Filter from "./Filter";
 
-import hogs from "../porkers_data";
+import HOGS from "../porkers_data";
 
 function App() {
+	const [hogs, setHogs] = useState(HOGS)
 	return (
 		<div className="App">
-			<Nav />
+			<Header />
+			<Filter />
+			<Hoglist hogs={hogs} />
 		</div>
 	);
 }
