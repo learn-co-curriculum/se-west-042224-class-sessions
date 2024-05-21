@@ -1,17 +1,18 @@
 import React from "react";
 import Purse from "./Purse";
 import InventoryTile from "./InventoryTile";
+import PotionTile from "./PotionTile";
 
 function Inventory({ inventory, potions, sell, shake, stopShake, gold }) {
   const inventoryList = inventory.map((item) => {
     const potion = potions.find((potion) => potion.id === item.id);
 
     return (
-      <InventoryTile key={potion.id} potion={potion} sell={sell}>
+      <PotionTile key={potion.id} potion={potion} onClickCallback={sell} type="inventory">
         <h4>
           {potion.name} x {item.amount}
         </h4>
-      </InventoryTile>
+      </PotionTile>
     );
   });
 
