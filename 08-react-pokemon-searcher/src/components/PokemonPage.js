@@ -13,10 +13,14 @@ function PokemonPage() {
     fetch('http://localhost:3001/pokemon')
       .then(response => response.json())
       .then(setPokemons)
-  }, [])
+  }, []) // empty dependency array runs the effect once on component first DOM mount
 
   function changeSearchTerm(newTerm){
     setSearchTerm(newTerm)
+  }
+
+  function addPokemon(newPokemon){
+    setPokemons([newPokemon, ...pokemons])
   }
 
   const filteredPokemons = pokemons.filter(poke => poke.name.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -25,7 +29,7 @@ function PokemonPage() {
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm onAddPokemon={addPokemon}/>
       <br />
       <Search searchTerm={searchTerm} onChangeSearch={changeSearchTerm} />
       <br />
