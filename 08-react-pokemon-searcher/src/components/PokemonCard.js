@@ -1,12 +1,18 @@
-import React from "react";
+import {useState} from "react";
 import { Card } from "semantic-ui-react";
 
 function PokemonCard({hp, name, sprites: {front, back}}) {
+  const [isShowFront, setIsShowFront] = useState(true)
+
+  function toggleSide(){
+    setIsShowFront(!isShowFront)
+  }
+
   return (
     <Card>
-      <div>
+      <div onClick={toggleSide}>
         <div className="image">
-          <img src={front} alt="oh no!" />
+          <img src={isShowFront ? front : back} alt="oh no!" />
         </div>
         <div className="content">
           <div className="header">{name}</div>
