@@ -12,10 +12,14 @@ function App() {
       .then(setListings)
   }, [])
 
+  function removeListing(id){
+    setListings(listings.filter(listing => listing.id !== id))
+  }
+
   return (
     <div className="app">
       <Header />
-      <ListingsContainer listings={listings} />
+      <ListingsContainer listings={listings} onDelete={removeListing} />
     </div>
   );
 }
