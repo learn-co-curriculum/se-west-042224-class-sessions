@@ -4,7 +4,6 @@ import Filters from "./Filters";
 import RotateLoader from "react-spinners/RotateLoader";
 import { css } from "@emotion/react";
 // import { useSelector} from 'react-redux'
-import { useFetchPetsQuery } from "../app/services/petsApi";
 
 function PetBrowser() {
 
@@ -17,22 +16,21 @@ function PetBrowser() {
   `;
 
   //  const pets = useSelector(state => state.pets)
-  const { data = [], isFetching } = useFetchPetsQuery(type);
 
-  const petCards = data.map((pet) => <Pet key={pet.id} pet={pet} />);
+  // const petCards = data.map((pet) => <Pet key={pet.id} pet={pet} />);
 
   return (
     <div>
       <div style={{ height: "100px", padding: "50px" }}>
-        <RotateLoader
+        {/* <RotateLoader
           color={"#F5A623"}
           loading={isFetching}
           size={20}
           css={override}
-        />
+        /> */}
       </div>
       <Filters onChangeType={setType}/> 
-      <div className="ui cards">{petCards}</div>
+      <div className="ui cards"><h2>Display pet cards here</h2></div>
     </div>
   );
 }

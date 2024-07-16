@@ -10,9 +10,9 @@ function App() {
     <div className="App">
       <header className='App-header'>
         <h1>Redux Shelter</h1>
-        <Budget />
-        <PetBrowser />
       </header>
+      <Budget />
+      <PetBrowser />
     </div>
   )
 }
