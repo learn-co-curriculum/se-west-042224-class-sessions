@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { pets } from '../../data/pets'
 
 const petsSlice = createSlice({
-    name: 'pets',
+    name: "pets",
     initialState: pets,
     reducers: {
         adoptPet(state, action){

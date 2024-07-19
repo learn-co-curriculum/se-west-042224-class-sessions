@@ -43,7 +43,7 @@
       "age": 6,
       "weight": 3,
       "name": "Silent",
-      "isAdopted": true
+      "isAdopted": false
     },
     {
       "id": "ffc4663d-71f3-4ad9-8242-973756c8b8b1",
@@ -52,7 +52,7 @@
       "age": 10,
       "weight": 5,
       "name": "Wisdom",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "9750e959-f8ef-465f-9e13-16323454dc1f",
@@ -61,7 +61,7 @@
       "age": 4,
       "weight": 5,
       "name": "Hemingway",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "24064151-0d34-4b9e-ba29-d4289bda8fe6",
@@ -70,7 +70,7 @@
       "age": 9,
       "weight": 4,
       "name": "Radar",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "18854fc7-00c9-4d6a-b3c6-bfd9a06ce1e7",
@@ -97,7 +97,7 @@
       "age": 6,
       "weight": 2,
       "name": "Max",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "20f15086-7952-4ead-bee4-bd8d8f990738",
@@ -214,7 +214,7 @@
       "age": 5,
       "weight": 1,
       "name": "Radar",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "a7ea570c-275f-4a4d-aa71-fdd1f72a2c02",
